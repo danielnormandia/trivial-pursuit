@@ -1,0 +1,33 @@
+.Clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+body {
+
+}
+
+.question-area {
+
+}
+
+.question-box {
+
+}
+
+.answer-area {
+
+}
+
+.answer-box {
+
+}
+
+.hint-area {
+
+}
+
+.hint-box {
+
+}
