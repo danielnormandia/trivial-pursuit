@@ -74,6 +74,9 @@ var random = Math.floor(Math.random() * 5);
   var toggleStart = function () {
       $('#start-btn').toggle();
       random = Math.floor(Math.random() * 5);
+      while (used.includes(questions[random])) {
+          random = Math.floor(Math.random() * 5)
+      }
   }
 
 // setup game state
@@ -83,6 +86,7 @@ var random = Math.floor(Math.random() * 5);
       var $answerBox = $(".answer-box");
       var $hintBox = $(".hint-box");
       $questionBox.html(questions[random].q);
+      $hintBox.html(questions[random].hint);
           for(var i in questions[random]){
               if(i != 'cA' && i != "q" && i != "hint"){
                   $answerBox.append('<p class="answer">' + questions[random][i] + '</p>');
@@ -102,7 +106,7 @@ var random = Math.floor(Math.random() * 5);
     if ($(this).text() === questions[random].cA) {
         $answerText.text("Correct Answer! You scored a point");
         score ++;
-        $scoreText.text(score);
+        $scoreText.text(score + " point(s)");
     }
     else {
         $answerText.text("Wrong answer!");
@@ -115,6 +119,7 @@ var random = Math.floor(Math.random() * 5);
         else {
         $('.question-box').html(null);
         $('.answer-box').html(null);
+        $('.hint-box').html(null);
         $('.result').html(null);
         toggleStart();
 
