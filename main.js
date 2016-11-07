@@ -86,13 +86,17 @@ var random = Math.floor(Math.random() * 5);
       var $answerBox = $(".answer-box");
       var $hintBox = $(".hint-box");
       $questionBox.html(questions[random].q);
-      $hintBox.html(questions[random].hint);
           for(var i in questions[random]){
               if(i != 'cA' && i != "q" && i != "hint"){
                   $answerBox.append('<p class="answer">' + questions[random][i] + '</p>');
 
               }
           }
+      // $hintBox.html(questions[random].hint);
+      var $hint = $('#hint-btn');
+          $hint.click(function() {
+              $hintBox.html(questions[random].hint);
+          })
       used.push(questions[random]);
       $('p.answer').click(checkAnswers);
 
