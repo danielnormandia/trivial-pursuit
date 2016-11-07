@@ -50,6 +50,8 @@ var questionFive = {
 }
 
 var questions = [questionOne, questionTwo, questionThree, questionFour, questionFive];
+
+// score tracker
 var score = 0;
 var miss = 0;
 
@@ -72,11 +74,11 @@ var miss = 0;
       var $questionBox = $(".question-box");
       var $answerBox = $(".answer-box");
       var $hintBox = $(".hint-box");
-
-      $questionBox.html(questions[0].q);
-          for(var i in questionOne){
+      var random = Math.floor(Math.random() * 5);
+      $questionBox.html(questions[random].q);
+          for(var i in questions[random]){
               if(i != 'cA' && i != "q" && i != "hint"){
-                  $answerBox.append('<p class="answer">' + questionOne[i] + '</p>');
+                  $answerBox.append('<p class="answer">' + questions[random][i] + '</p>');
 
               }
         }
