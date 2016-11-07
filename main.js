@@ -54,6 +54,7 @@ var questions = [questionOne, questionTwo, questionThree, questionFour, question
 // score tracker
 var score = 0;
 var miss = 0;
+var random = Math.floor(Math.random() * 5);
 
 
   var addClickEvent = function() {
@@ -65,6 +66,7 @@ var miss = 0;
 
   var toggleStart = function () {
       $('#start-btn').toggle();
+      random = Math.floor(Math.random() * 5);
   }
 
   addClickEvent();
@@ -74,7 +76,6 @@ var miss = 0;
       var $questionBox = $(".question-box");
       var $answerBox = $(".answer-box");
       var $hintBox = $(".hint-box");
-      var random = Math.floor(Math.random() * 5);
       $questionBox.html(questions[random].q);
           for(var i in questions[random]){
               if(i != 'cA' && i != "q" && i != "hint"){
@@ -87,10 +88,12 @@ var miss = 0;
   }
 
   var checkAnswers = function () {
-    var $answerText = $(".result");
-    if ($(this).text() === questionOne.cA) {
+      var $answerText = $(".result");
+      var $scoreText = $(".score");
+    if ($(this).text() === questions[random].cA) {
         $answerText.text("Correct Answer! You scored a point");
         score ++;
+        $scoreText.text(score);
     }
     else {
         $answerText.text("Wrong answer!");
@@ -101,9 +104,9 @@ var miss = 0;
             gameOver();
         }
         else {
-        $('.result').html(null);
         $('.question-box').html(null);
         $('.answer-box').html(null);
+        $('.result').html(null);
         toggleStart();
 
     }}, 2000);
