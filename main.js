@@ -105,6 +105,7 @@ var random = Math.floor(Math.random() * 5);
 // check answer selected against questions array
   var checkAnswers = function () {
       $(this).unbind('click');
+      $('#hint-btn').off()
       var $answerText = $(".result");
       var $scoreText = $(".score");
     if ($(this).text() === questions[random].cA) {
