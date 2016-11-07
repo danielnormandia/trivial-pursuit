@@ -89,25 +89,33 @@ var miss = 0;
     if ($(this).text() === questionOne.cA) {
         $answerText.text("Correct Answer! You scored a point");
         score ++;
-        if (score === 3) {
-          gameOver();
-        }
-    }else {
+    }
+    else {
         $answerText.text("Wrong answer!");
         miss ++;
-        if (miss === 3) {
-          gameOver();
+    };
+    setTimeout(function () {
+        if (score === 3 || miss === 3) {
+            gameOver();
         }
-    }setTimeout(function () {
+        else {
         $('.result').html(null);
         $('.question-box').html(null);
         $('.answer-box').html(null);
         toggleStart();
-    }, 2000);
+
+    }}, 2000);
   }
 
   var gameOver = function () {
-
+      if (score === 3) {
+          alert("You won! Play Again!");
+          location.reload();
+      }
+      else {
+          alert("You lost! Try again?")
+          location.reload();
+      }
   }
 
 })
