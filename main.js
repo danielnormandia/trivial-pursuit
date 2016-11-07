@@ -1,4 +1,6 @@
 jQuery(function() {
+
+// create questions
 var questionOne = {
     q : "Who does not like math?",
     a1 : "Barney",
@@ -50,13 +52,15 @@ var questionFive = {
 }
 
 var questions = [questionOne, questionTwo, questionThree, questionFour, questionFive];
+var used = [];
+
 
 // score tracker
 var score = 0;
 var miss = 0;
 var random = Math.floor(Math.random() * 5);
 
-
+// add round start functionality
   var addClickEvent = function() {
     var $start = $("#start-btn");
         $start.click(function(){
@@ -64,13 +68,15 @@ var random = Math.floor(Math.random() * 5);
         })
   }
 
+  addClickEvent();
+
+// toggle round start button
   var toggleStart = function () {
       $('#start-btn').toggle();
       random = Math.floor(Math.random() * 5);
   }
 
-  addClickEvent();
-
+// setup game state
   var gameStart = function() {
       toggleStart();
       var $questionBox = $(".question-box");
@@ -82,12 +88,15 @@ var random = Math.floor(Math.random() * 5);
                   $answerBox.append('<p class="answer">' + questions[random][i] + '</p>');
 
               }
-        }
-        $('p.answer').click(checkAnswers)
+          }
+      used.push(questions[random]);
+      $('p.answer').click(checkAnswers);
 
   }
 
+// check answer selected against questions array
   var checkAnswers = function () {
+      $(this).unbind('click');
       var $answerText = $(".result");
       var $scoreText = $(".score");
     if ($(this).text() === questions[random].cA) {
@@ -112,6 +121,8 @@ var random = Math.floor(Math.random() * 5);
     }}, 2000);
   }
 
+
+// Run game over when either 3 correct answers or 3 misses are given.
   var gameOver = function () {
       if (score === 3) {
           alert("You won! Play Again!");
