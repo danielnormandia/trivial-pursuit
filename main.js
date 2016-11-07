@@ -21,32 +21,32 @@ var questionTwo = {
 
 var questionThree = {
     q : "Who loves to annoy his friends?",
-    a1 : "",
-    a2 : "",
-    a3 : "",
-    a4 : "",
-    cA : "",
-    hint : ""
+    a1 : "Kanye West",
+    a2 : "Justin Bieber",
+    a3 : "John",
+    a4 : "Santa Clause",
+    cA : "John",
+    hint : "mention flannel"
 }
 
 var questionFour = {
-    q : "",
-    a1 : "",
-    a2 : "",
-    a3 : "",
-    a4 : "",
-    cA : "",
-    hint : ""
+    q : "Who here works with video games?",
+    a1 : "Justin Wong",
+    a2 : "Kevin Flynn",
+    a3 : "John Carmack",
+    a4 : "Tims",
+    cA : "Tims",
+    hint : "loves lisp"
 }
 
 var questionFive = {
-    q : "",
-    a1 : "",
-    a2 : "",
-    a3 : "",
-    a4 : "",
-    cA : "",
-    hint : ""
+    q : "Who here has a band?",
+    a1 : "Jared",
+    a2 : "Leonardo DiCaprio",
+    a3 : "Chris Hemsworth",
+    a4 : "Ryan Gosling",
+    cA : "Jared",
+    hint : "Sorry guys."
 }
 
 var questions = [questionOne, questionTwo, questionThree, questionFour, questionFive];
