@@ -17,7 +17,7 @@ My Approach to the game:
     Then once either the player scores 3 points, or misses 3 answers, the game would end and display the results to the user.
 
 User Story:
-    As a player, I want to play this game so I may be both entertained, as well as test my knowledge.
+    As a player, I want to play this game so I may be entertained, as well as test my knowledge.
 
 Installation: N/A
 Just run in browser
