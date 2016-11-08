@@ -5,29 +5,126 @@
 }
 
 body {
+    background-image: url('skullgirlsbg.jpg');
+    background-color: black;
+    color: red;
+    -webkit -background-size: cover;
+    -moz -background-size: cover;
+    -o -background-size: cover;
+    background-size: cover;
+    font-size: 25px;
+}
 
+.upper {
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    height: 50%;
+    width: 100%;
 }
 
 .question-area {
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 33%;
+    position: absolute;
+}
+
+
+.question-box {
+    top: 50%;
+    left: 40%;
+    position: absolute;
+}
+
+.start {
+    top: 0%;
+    left: 33%;
+    height: 100%;
+    width: 33%;
+    position: absolute;
+}
+
+#start-btn {
+    top: 50%;
+    left: 33%;
+    position: absolute;
 
 }
 
-.question-box {
-
+.roundCount {
+    top: 40%;
+    left: 40%;
+    position: absolute;
 }
 
 .answer-area {
-
+    top: 0%;
+    right: 0%;
+    height: 100%;
+    width: 33%;
+    position: absolute;
 }
 
 .answer-box {
+    top: 40%;
+    left: -15%;
+    position: absolute;
+}
 
+.lower {
+    top: 50%;
+    left: 0%;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+}
+
+.hint-container {
+    top: 0%;
+    left: 0;
+    position: absolute;
+    height: 50%;
+    width: 50%;
+}
+
+#hint-btn {
+    top: 50%;
+    left: 33%;
+    position: absolute;
 }
 
 .hint-area {
-
+    top: 50%;
+    left: 0%;
+    position: absolute;
+    height: 50%;
+    width: 50%;
 }
 
 .hint-box {
+    position: absolute;
+    top: 25%;
+    left: 28%;
+}
 
+.result-screen {
+    top: 0%;
+    left: 50%;
+    position: absolute;
+    height: 100%;
+    width: 50%;
+}
+
+.result {
+    position: absolute;
+    top: 45%;
+    left: 35%;
+}
+
+.score {
+    position: absolute;
+    top: 40%;
+    left: 35%;
 }

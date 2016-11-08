@@ -53,7 +53,7 @@ var questionFive = {
 
 var questions = [questionOne, questionTwo, questionThree, questionFour, questionFive];
 var used = [];
-
+var round = 1;
 
 // score tracker
 var score = 0;
@@ -82,6 +82,7 @@ var random = Math.floor(Math.random() * 5);
 // setup game state
   var gameStart = function() {
       toggleStart();
+      $('.roundCount').html(round);
       var $questionBox = $(".question-box");
       var $answerBox = $(".answer-box");
       var $hintBox = $(".hint-box");
@@ -122,12 +123,12 @@ var random = Math.floor(Math.random() * 5);
             gameOver();
         }
         else {
-        $('.question-box').html(null);
-        $('.answer-box').html(null);
-        $('.hint-box').html(null);
-        $('.result').html(null);
-        toggleStart();
-
+            $('.question-box').html(null);
+            $('.answer-box').html(null);
+            $('.hint-box').html(null);
+            $('.result').html(null);
+            toggleStart();
+            round++;
     }}, 2000);
   }
 
