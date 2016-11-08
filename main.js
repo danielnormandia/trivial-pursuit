@@ -74,7 +74,7 @@ var random = Math.floor(Math.random() * 5);
   var toggleStart = function () {
       $('#start-btn').toggle();
       random = Math.floor(Math.random() * 5);
-      while (used.includes(questions[random])) {
+      while (used.includes(questions[random])) {  //exclude used questions
           random = Math.floor(Math.random() * 5)
       }
   }
@@ -93,23 +93,21 @@ var random = Math.floor(Math.random() * 5);
 
               }
           }
-      // $hintBox.html(questions[random].hint);
       var $hint = $('#hint-btn');
           $hint.click(function() {
               $hintBox.html(questions[random].hint);
           })
-      used.push(questions[random]);
+      used.push(questions[random]); //mark current question as used
       $('p.answer').click(checkAnswers);
-
   }
 
 // check answer selected against questions array
   var checkAnswers = function () {
-      $(this).unbind('click');
+      $(this).unbind('click');  //remove click event from answeres
       $('#hint-btn').off()
       var $answerText = $(".result");
       var $scoreText = $(".score");
-    if ($(this).text() === questions[random].cA) {
+    if ($(this).text() === questions[random].cA) {  //check answer input accuracy
         $answerText.text("Correct Answer! You scored a point");
         score ++;
         $scoreText.text(score + " point(s)");
@@ -118,28 +116,28 @@ var random = Math.floor(Math.random() * 5);
         $answerText.text("Wrong answer!");
         miss ++;
     };
-    setTimeout(function () {
+    setTimeout(function () {  //check end game
         if (score === 3 || miss === 3) {
             gameOver();
         }
-        else {
+        else {  //depopulate to initail state
             $('.question-box').html(null);
             $('.answer-box').html(null);
             $('.hint-box').html(null);
             $('.result').html(null);
-            toggleStart();
-            round++;
+            toggleStart();  //return round start button
+            round++;  //increment to next round
     }}, 2000);
   }
 
 
 // Run game over when either 3 correct answers or 3 misses are given.
   var gameOver = function () {
-      if (score === 3) {
+      if (score === 3) {  //win requirement
           alert("You won! Play Again!");
           location.reload();
       }
-      else {
+      else {  //loss requirement
           alert("You lost! Try again?")
           location.reload();
       }
