@@ -12,7 +12,7 @@ body {
     -moz -background-size: cover;
     -o -background-size: cover;
     background-size: cover;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .upper {
@@ -119,7 +119,7 @@ body {
 
 .result {
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 35%;
 }
 
